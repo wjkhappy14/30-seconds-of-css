@@ -6,21 +6,41 @@
             justify-content: center;
             align-items: center;
             height: 100px;
+            border: solid red 1px;
+        }
+
+        .child {
+            font-size: x-large;
         }
     </style>
+    <script type="text/javascript">
+        //"use strict"
+        window.onload = (e) => {
+            const func = function () {
+                var a = b = c = d = 100;
+                try {
+                    console.log(window.b);
+                    console.log({ a, b, c, d });
+                }
+                catch (e) {
+                    console.error(e);
+                }
+            };
+            func();
+        }
+    </script>
 </head>
 <body>
-    <p>
-        Horizontally and vertically centers a child element within a parent element using `grid`.
-
+    <div>
+        <p>
+            Horizontally and vertically centers a child element within a parent element using <b>grid</b>.
+        </p>
         - Use `display: grid` to create a grid layout.
         - Use `justify-content: center` to center the child horizontally.
         - Use `align-items: center` to center the child vertically.
-
-    </p>
-    <div class="grid-centering">
-        <div class="child">Centered content.</div>
     </div>
-
+    <div class="grid-centering">
+        <div class="child">垂直水平居中</div>
+    </div>
 </body>
 </html>

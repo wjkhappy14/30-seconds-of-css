@@ -1,11 +1,10 @@
 <html>
 <head>
     <style type="text/css">
-
         .container {
             border: 1px solid #9C27B0;
             height: 250px;
-            width: 250px;
+            width: 450px;
         }
 
         .center {
@@ -22,21 +21,27 @@
     </style>
 </head>
 <body>
-    <p>
-        Vertically and horizontally centers a child element within its parent element, using `display: table`.
-
-        - Use `display: table` to make the `.center` element behave like a `<table>
+    <div>
+        <p>
+            Vertically and horizontally centers a child element within its parent element, using `display: table`.
+        </p>
+        <p>
+            - Use `display: table` to make the `.center` element behave like a table
             ` element.
             - Set `height` and `width` to `100%` to make the element fill the available space within its parent element.
             - Use `display: table-cell` on the child element to make it behave like a `
-            <td>
+            td
                 ` elements.
                 - Use `text-align: center` and `vertical-align: middle` on the child element to center it horizontally and vertically.
                 - The outer parent (`.container`) must have a fixed `width` and `height`.
-    </p>
+        </p>
+    </div>
     <div class="container">
         <div class="center">
-        <span>Centered content</span>
+            <span>
+                <b>display: table</b>
+                垂直水平居中
+            </span>
         </div>
     </div>
 </body>
