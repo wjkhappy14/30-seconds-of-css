@@ -1,6 +1,11 @@
 <html>
 <head>
     <style type="text/css">
+        .container {
+            display: flex;
+            justify-content: center
+        }
+
         .hover-img {
             background-color: #000;
             color: #fff;
@@ -78,22 +83,41 @@
                 opacity: 1;
             }
     </style>
+    <script type="text/javascript">
+        window.onload = (e) => console.info(Array.prototype);
+        window.requestAnimationFrame(requestAnimationFrameHandler);
+        function requestAnimationFrameHandler() {
+            console.log('requestAnimationFrame');
+            window.requestAnimationFrame(requestAnimationFrameHandler);
+            return 1000;
+        }
+    </script>
 </head>
 <body>
-    <p>
-        Displays an image overlay effect on hover.
+    <div>
+        <p>
+            Displays an image overlay effect on hover.
 
-        - Use the `:before` and `:after` pseudo-elements for the top and bottom bars of the overlay respectively, setting their `opacity`, `transform` and `transition` to produce the desired effect.
-        - Use the `<figcaption>
-            ` for the text of the overlay, setting `display: flex`, `flex-direction: column` and `justify-content: center` to center the text into the image.
-            - Use the `:hover` pseudo-selector to update the `opacity` and `transform` of all the elements and produce the desired effect.
-    </p>
-    <figure class="hover-img">
-        <img src="https://picsum.photos/id/200/440/320.jpg" />
-        <figcaption>
-            <h3>Lorem <br />Ipsum</h3>
-        </figcaption>
-    </figure>
+            - Use the `:before` and `:after` pseudo-elements for the top and bottom bars of the overlay respectively, setting their `opacity`, `transform` and `transition` to produce the desired effect.
+            - Use the `<figcaption>
+                ` for the text of the overlay, setting `display: flex`, `flex-direction: column` and `justify-content: center` to center the text into the image.
+                - Use the `:hover` pseudo-selector to update the `opacity` and `transform` of all the elements and produce the desired effect.
+        </p>
+    </div>
+    <div class="container">
+        <figure class="hover-img">
+            <img src="https://picsum.photos/id/200/440/320.jpg" />
+            <figcaption>
+                <h3>Äã <br />ºÃ</h3>
+            </figcaption>
+        </figure>
+        <figure class="hover-img">
+            <img src="https://picsum.photos/id/200/440/320.jpg" />
+            <figcaption>
+                <h3>Hello <br />Ipsum</h3>
+            </figcaption>
+        </figure>
+    </div>
 </body>
 </html>
 
