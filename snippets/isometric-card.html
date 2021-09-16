@@ -2,15 +2,18 @@
 <head>
     <style type="text/css">
         .isometric-card {
+            display: inline-flex;
             margin: 0 auto;
+            border: solid red 1px;
             transform: rotateX(51deg) rotateZ(43deg);
             transform-style: preserve-3d;
             background-color: #fcfcfc;
             will-change: transform;
             width: 240px;
+            color: deeppink;
             height: 320px;
             border-radius: 2rem;
-            box-shadow: 1px 1px 0 1px #f9f9fb, -1px 0 28px 0 rgba(34, 33, 81, 0.01), 28px 28px 28px 0 rgba(34, 33, 81, 0.25);
+            box-shadow: 1px 1px 0 1px #f9f9fb, -1px 0 28px 0 rgba(34, 33, 181, 0.01), 28px 28px 28px 0 rgba(167, 44, 181, 0.25);
             transition: 0.4s ease-in-out transform, 0.3s ease-in-out box-shadow;
         }
 
@@ -27,7 +30,16 @@
         - Use `transition` to animate the card, creating a lift effect when the user hovers over it.
     </p>
     <div class="isometric-card">
-        <h1>hello</h1>
+        <h1>One</h1>
+    </div>
+    <div class="isometric-card">
+        <h1>Two</h1>
+    </div>
+    <div class="isometric-card">
+        <h1>Three</h1>
+    </div>
+    <div class="isometric-card">
+        <h1>Four</h1>
     </div>
 </body>
 </html>
