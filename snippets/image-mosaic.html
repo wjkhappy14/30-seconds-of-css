@@ -1,10 +1,9 @@
 <html>
 <head>
     <style type="text/css">
-
         .image-mosaic {
             display: grid;
-            gap: 1rem;
+            grid-gap: 1rem;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             grid-auto-rows: 240px;
         }
@@ -40,6 +39,25 @@
             }
         }
     </style>
+    <script type="text/javascript">
+        let numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+        const xParseInt = (s, radix, items) => {
+            let n = new Number(s);
+            return n.toFixed(radix);
+        };
+        let items = ["1", "2", "3"].map(xParseInt);
+        console.log(items);
+        window.onload = () => {
+            var items = numbers.map((item, index, s) => parseInt(item), numbers);
+            console.log(items);
+
+            let container = document.getElementById('container');
+            container.childNodes.forEach((value, key, parent) => {
+                console.log(value);
+            });
+        };
+        document.onload = (e) => console.log('document.onload')
+    </script>
 </head>
 <body>
     <p>
@@ -47,10 +65,12 @@
         - Use `display: grid` to create an appropriate responsive grid layout.
         - Use `grid-row: span 2 / auto` and `grid-column: span 2 / auto` to create items that span two rows or two columns respectively.
         - Wrap the previous styles into a media query to avoid applying on small screen sizes.
+        <a href="https://drafts.csswg.org/css-animations-1/#AnimationEvent-types">drafts.csswg.org</a>
+        <a href="https://unsplash.com/">unsplash</a>
     </p>
-    <div class="image-mosaic">
+    <div class="image-mosaic" id="container">
         <div class="card card-tall card-wide"
-             style="background-image: url('https://picsum.photos/id/564/1200/800')"></div>
+             style="background-image: url('https://wx.qlogo.cn/mmhead/Q3auHgzwzM4qc2DibGJtJ5a8AzYO0dRSTDQsF2xF4mQ6RbzsRriavfiaA/0')"></div>
         <div class="card card-tall"
              style="background-image: url('https://picsum.photos/id/566/800/530')"></div>
         <div class="card"
@@ -68,7 +88,7 @@
         <div class="card"
              style="background-image: url('https://picsum.photos/id/693/800/530')"></div>
         <div class="card"
-             style="background-image: url('https://www.lintsense.cn/hello/images/115.png')"></div>
+             style="background-image: url('https://www.lintsense.cn/hello/images/113.png')"></div>
         <div class="card"
              style="background-image: url('https://picsum.photos/id/610/800/530')"></div>
         <div class="card"
