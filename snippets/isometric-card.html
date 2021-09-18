@@ -1,4 +1,4 @@
-<html>
+<html lang="zh-cn">
 <head>
     <style type="text/css">
         .isometric-card {
@@ -9,11 +9,11 @@
             transform-style: preserve-3d;
             background-color: #fcfcfc;
             will-change: transform;
-            width: 240px;
+            width: 320px;
             color: deeppink;
-            height: 320px;
+            height: 270px;
             border-radius: 2rem;
-            box-shadow: 1px 1px 0 1px #f9f9fb, -1px 0 28px 0 rgba(34, 33, 181, 0.01), 28px 28px 28px 0 rgba(167, 44, 181, 0.25);
+            box-shadow: 1px 1px 0 1px #28289c, -1px 0 28px 0 rgba(34, 33, 181, 0.01), 28px 28px 28px 0 rgba(167, 44, 181, 0.25);
             transition: 0.4s ease-in-out transform, 0.3s ease-in-out box-shadow;
         }
 
@@ -21,7 +21,34 @@
                 transform: translate3d(0px, -16px, 0px) rotateX(51deg) rotateZ(43deg);
                 box-shadow: 1px 1px 0 1px #f9f9fb, -1px 0 28px 0 rgba(34, 33, 81, 0.01), 54px 54px 28px -10px rgba(34, 33, 81, 0.15);
             }
+
+        code {
+            font-size: xx-large;
+            padding: 30px;
+            margin: 10px;
+            color: green;
+        }
     </style>
+    <script type="text/javascript">
+        const square = function* (x) { yield x * x; }
+
+        const factorial = function* (n) { n <= 1 ? yield 1 : yield (n * factorial(n - 1)); }
+
+        const iterator = function* (x) { x > 0 ? yield x * iterator(x - 1) : yield* square(x); }
+
+        window.onresize = (e) => {
+            let f = iterator(10);
+            let n = f.next();
+            console.log(e);
+            factorial(10);
+        }
+        function onLoad(e) {
+            var f = factorial(10);
+            console.log(f);
+
+        }
+        window.onload = (e) => void onload
+    </script>
 </head>
 <body>
     <p>
@@ -30,16 +57,16 @@
         - Use `transition` to animate the card, creating a lift effect when the user hovers over it.
     </p>
     <div class="isometric-card">
-        <h1>One</h1>
+        <code>const square = function* (x) { yield x * x; }</code>
     </div>
     <div class="isometric-card">
-        <h1>Two</h1>
+        <code> const iterator = function* (x) { x > 0 ? yield x * iterator(x - 1) : yield* square(x); }</code>
     </div>
     <div class="isometric-card">
-        <h1>Three</h1>
+        <code> const iterator = function* (x) { x > 0 ? yield x * iterator(x - 1) : yield* square(x); }</code>
     </div>
     <div class="isometric-card">
-        <h1>Four</h1>
+        <code>window.onload = (e) => void onload</code>
     </div>
 </body>
 </html>
