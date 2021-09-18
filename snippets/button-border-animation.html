@@ -1,4 +1,4 @@
-<html>
+<html lang="zh-cn">
 <head>
     <style type="text/css">
         .animated-border-button {
@@ -36,7 +36,44 @@
             .animated-border-button:hover:after {
                 width: 100%;
             }
+
+        #container {
+            border: solid red 2px;
+            height: 200px;
+            padding: 2px;
+            margin: 3px;
+        }
     </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            let items = [Number.MAX_VALUE, Number.MIN_VALUE];
+
+            queueMicrotask(() => { });
+            let types = ['hello', true, 123, {}, null, undefined, Symbol, () => { }];
+            types.map((value, index) => {
+                let type = typeof (value);
+                console.log(`${value} is : ${type} `);
+            });
+        }
+        function addButton() {
+            let container = document.getElementById('container');
+
+            for (var i = 0; i < 5; i++) {
+                let counter = (v) => { return v; };
+                let v = counter(i);
+                var btn = document.createElement('button');
+                btn.className = "animated-border-button";
+                btn.appendChild(document.createTextNode('Button ' + i));
+                btn.addEventListener('click', function () {
+                    console.log(v);
+                });
+                setTimeout(() => {
+                    console.log(v);
+                }, 0);
+                container.appendChild(btn);
+            }
+        }
+    </script>
 </head>
 <body>
     <p>
@@ -44,7 +81,8 @@
         - Use the `:before` and `:after` pseudo-elements to create two boxes `24px` wide opposite each other above and below the box.
         - Use the `:hover` pseudo-class to extend the `width` of those elements to `100%` on hover and animate the change using `transition`.
     </p>
-    <button class="animated-border-button">Submit</button>
+    <button class="animated-border-button" onclick="return addButton()">Submit</button>
+    <div id="container"></div>
 </body>
 </html>
 
