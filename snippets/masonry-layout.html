@@ -43,10 +43,18 @@
                 margin: 0 0 var(--column-gap);
             }
     </style>
+    <script type="text/javascript">
+        let factorial = async (n) => n < 1 ? 1 : (n) * await factorial(n - 1);
+        window.onload = (e) => {
+            var p = new Promise(function (()=> { }, () => { }) {
+
+
+            });
+        }
+    </script>
 </head>
 <body>
     <p>
-
         Creates a masonry-style layout that is especially useful when working with images.
 
         - Create a masonry-style layout that consists of "bricks" that fall into each other with either a fixed `width` (vertical layout) or a fixed `height` (horizontal layout), forming a perfect fit. Especially useful when working with images.
@@ -54,8 +62,6 @@
         - Apply `display: block` to `.masonry-brick` elements to allow the layout to flow properly.
         - Use the `:first-child` pseudo-element selector to apply a different `margin` for the first element to account for its positioning.
         - Use CSS variables to allow for greater flexibility within the layout in combination with media queries to ensure that the layout is responsive in different viewport sizes.
-
-
     </p>
     <div class="masonry-container">
         <div class="masonry-columns">
